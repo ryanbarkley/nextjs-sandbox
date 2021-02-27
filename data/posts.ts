@@ -21,8 +21,11 @@ export const formatSentenceCase = (sentence: string): string =>
 export const formatTitleCase = (title: string): string =>
   title.split(" ").map(formatSentenceCase).join(" ");
 
-export const buildPostSlug = (post: Post): string =>
-  `${post.id}-${post.title.toLocaleLowerCase().replaceAll(" ", "-")}`;
+export const buildPostSlug = ({
+  id,
+  title,
+}: Pick<Post, "id" | "title">): string =>
+  `${id}-${title.toLocaleLowerCase().toString().replace(/ /g, "-")}`;
 
 export const parsePostSlug = (slug: string): number => Number.parseInt(slug);
 

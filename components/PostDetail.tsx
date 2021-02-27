@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import { getPost, formatSentenceCase, formatTitleCase } from "../data/posts";
 import PostComments from "./PostComments";
 
+// TODO: error boundary & caching
+
 const Wrapper = styled.div``;
 
 const Title = styled.h1`
