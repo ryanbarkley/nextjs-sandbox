@@ -1,7 +1,12 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "@emotion/styled";
 import PostDetail from "../../components/PostDetail";
 import { parsePostSlug } from "../../data/posts";
+
+const LinkWrapper = styled.div`
+  margin-top: 1rem;
+`;
 
 const Main = styled.main`
   margin: 2rem auto;
@@ -19,6 +24,9 @@ export default function PostDetailPage(): JSX.Element {
   return (
     <Main>
       <PostDetail id={postId} />
+      <LinkWrapper>
+        <Link href="/">back to main page</Link>
+      </LinkWrapper>
     </Main>
   );
 }
