@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Comment = styled.div`
   margin-top: 1rem;
 
-  &:first-child {
+  &:first-of-type {
     margin-top: 0;
   }
 `;
