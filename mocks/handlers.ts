@@ -28,26 +28,28 @@ const mockedComments: Comment[] = [
 
 export const handlers = [
   rest.get("https://jsonplaceholder.typicode.com/posts", (req, res, ctx) =>
-    res(ctx.status(200), ctx.json(mockedPosts))
+    res(ctx.delay(10), ctx.status(200), ctx.json(mockedPosts))
   ),
   rest.get(
     "https://jsonplaceholder.typicode.com/posts/:id",
     (req, res, ctx) => {
       const { id } = req.params;
       return res(
+        ctx.delay(10),
         ctx.status(200),
         ctx.json(mockedPosts.find((p) => p.id === Number.parseInt(id)))
       );
     }
   ),
   rest.get("https://jsonplaceholder.typicode.com/comments", (req, res, ctx) =>
-    res(ctx.status(200), ctx.json(mockedComments))
+    res(ctx.delay(10), ctx.status(200), ctx.json(mockedComments))
   ),
   rest.get(
     "https://jsonplaceholder.typicode.com/comments/:postId",
     (req, res, ctx) => {
       const { postId } = req.params;
       return res(
+        ctx.delay(10),
         ctx.status(200),
         ctx.json(
           mockedComments.find((p) => p.postId === Number.parseInt(postId))
